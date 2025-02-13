@@ -5,3 +5,7 @@ CREATE NEW FILE NAMES WITH CONVENTIONS
     So its css file will be names "styles_page.css"
     Similar for js files
 EVERY NEW PAGE WILL BE CREATED IN ITS OWN REQUIRED FOLDER
+
+
+
+change try
