@@ -49,9 +49,10 @@
     margin-top: 20px;
   } */
 /* General Styling */
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(180deg, red, rgb(0, 0, 0));
   display: flex;
   justify-content: center;
   align-items: center;
