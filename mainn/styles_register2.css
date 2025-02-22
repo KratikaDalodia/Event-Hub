@@ -103,3 +103,24 @@ body{
         font-weight: bolder;
     }
 }
+
+
+
+.wrapper .registerlink{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px  ;
+}
+
+
+.registerlink p a {
+    color: pink;
+    text-decoration: none;
+    font-weight: 600;
+    transition: font-size 0.2s ease-in-out;
+}
+
+.registerlink p a:hover{
+    text-decoration: underline;
+    font-size: medium;
+}
