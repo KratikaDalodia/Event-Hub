@@ -30,7 +30,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
             alert("Login Successful!");
             console.log(userCredential.user);
             // Redirect to home
-            window.location.href = "/home/eventHome.html"; 
+            window.location.href = "home/eventHome.html"; 
         })
         .catch((error) => {
             alert(error.message);
