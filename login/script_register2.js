@@ -1,8 +1,8 @@
-// Import Firebase SDK
+// importing fireb sdk
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
-// Firebase Config
+// fireb configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAVxK1_lGtAaVH2WAEf7It9TLJKvV16EnU",
     authDomain: "event-hub-68c11.firebaseapp.com",
@@ -14,31 +14,30 @@ const firebaseConfig = {
     measurementId: "G-3PW2XTLSHY"
 };
 
-// Initialize Firebase
+// fireb initialition
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Handle Registration Form Submission
+// form submission
 document.getElementById("submit").addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent form from refreshing
+    e.preventDefault(); // Prevent form refreshing
 
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirm-password").value;
 
-    // Check if passwords match
     if (password !== confirmPassword) {
         alert("Passwords do not match!");
         return;
     }
 
-    // Create user with Firebase Auth
+    // user create
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             alert("Registration Successful!");
             console.log(userCredential.user);
-            // Redirect user to login page
-            window.location.href = "login2.html";  
+
+            window.location.href = "../eventHome.html";  
         })
         .catch((error) => {
             alert(error.message);

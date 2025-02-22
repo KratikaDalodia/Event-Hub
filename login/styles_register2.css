@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(img.jpg);
+    background: url(walp.jpg);
     background-size: cover;
     background-position: center;
     
@@ -80,5 +80,26 @@ body{
     font-size: 16px;
     color: #333;
     font-weight: 600;
+
+    background: linear-gradient(to right , pink 50% , white 50% );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.3s ease-in;
 }
 
+.btn:hover{
+    background-position: 0% 0% ;
+    animation-name: btnfill;
+    animation-duration: 200ms ;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btnfill{
+    0%{
+    }
+    100%{
+        scale: 1.02;
+        font-weight: bolder;
+    }
+}
