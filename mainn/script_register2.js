@@ -37,7 +37,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
             alert("Registration Successful!");
             console.log(userCredential.user);
 
-            window.location.href = "home/eventHome.html";  
+            window.location.href = "frontend/index.html";  
         })
         .catch((error) => {
             alert(error.message);
