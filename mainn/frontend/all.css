@@ -7893,7 +7893,7 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-family: 'FontAwesome';
   font-display: block;
-  src: url("../mainn/frontend/webfonts/fa-solid-900.woff2") format("woff2"), url("../mainn/frontend/webfonts/fa-solid-900.ttf") format("truetype"); }
+  src: url("../mainn/frontend/webfonts/fa-solid-900") format("woff2"), url("../mainn/frontend/webfonts/fa-solid-900.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'FontAwesome';
