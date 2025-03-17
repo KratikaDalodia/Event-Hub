@@ -1,0 +1,23 @@
+• Click on link.
+person goes on login page
+    enter email and pass
+registrer page  
+    enter email
+    enter name
+    enter year
+    pass, confirm pass
+Home page shown: 
+    Events list
+    Profile
+    misc links
+
+Events list:
+    Single event Click
+
+Individual event page: 
+    register for event
+
+Register for event page     
+    ** GOOGLE FORM CLONE **
+    
+    
