@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="/mainn/frontend/font.css">
+    <link rel="stylesheet" href="details_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Event Hub</a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-links">
+                        <a href="/mainn/frontend/index.html">Home</a>
+                    </li>
+                    <li class="nav-links">
+                        <a href="/mainn/frontend/Events/events.html">Events</a>
+                    </li>
+                    <li class="nav-links">
+                        <a href="#">Contact</a>
+                    </li>
+                    <li class="nav-links">
+                        <a href="/mainn/frontend/ProfiePagenew/profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="left">
+            <img class="event-img" id="event-image" src="" alt="Event Image">
+        </div>
+        <div class="right">
+            <h1 id="event-title">Loading...</h1>
+            <h3><i class="fa-solid fa-calendar"></i> Date: <span id="event-date"></span></h3>
+            <h3><i class="fa-solid fa-location-dot"></i> Venue: <span id="event-venue"></span></h3>
+            <p id="event-description"></p>
+            <a class="register-btn" id="register-link" href="#">Register</a>
+        </div>
+    </div>
+
+    
+
+    <script src="details_main.js"></script>
+</body>
+</html>

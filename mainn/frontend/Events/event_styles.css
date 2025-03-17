@@ -1,0 +1,229 @@
+html,body{
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: visible;
+}
+
+
+
+.event-list-container{
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: poppins;
+}
+.event-list-container h2{
+    font-size: 30px;
+    border-left: 4px solid #023047;
+    padding-left: 20px;
+}
+.event-list-container .events{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+.event-list-container .event img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.event-list-container .event{
+    box-shadow: 0 4px 24px -8px rgba(2, 48, 71, 0.2);
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: all 400ms ease;
+}
+.event-list-container .event:hover{
+    transform: scale(1.03);
+}
+.event-list-container .event-title{
+    font-size: 20px;
+    padding: 10px 0;
+    margin: 0;
+    color: #023047;
+}
+.event-list-container .details{
+    margin-top: 6px;
+    font-size: 14px;
+    color: #333;
+    flex: 1;
+}
+.event-list-container .details-btn{
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #023047;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: all 400ms ease;
+    text-align: center;
+}
+.event-list-container .details-btn:hover{
+    background-color: #023047;
+    color: #fff;
+}
+.event-list-container .date{
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+.event-list-container .event-search{
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-family: poppins;
+    box-sizing: border-box ;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+:root{
+    --text-gray: #3f4954;
+    --text-light: #686666da;
+    --bg-color: #0f0f0f;
+    --white: #fff;
+    --midnight: #104f55;
+
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+
+
+/* Navbar Styles */
+
+.nav{   
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+    box-shadow: 0 4px 24px -8px rgba(2, 48, 71, 0.2);
+}
+.nav .nav-brand a{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: Lexend, sans-serif;
+    font-size: 1.6rem;
+}   
+.nav .nav-items{
+    display: flex;
+    margin: 0;
+
+}
+.nav .nav-items .nav-links{
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-family: Abel, sans-serif;
+}
+.nav .nav-items .nav-links:hover{
+    background: var(--midnight);
+}
+.nav .nav-items .nav-links:hover a{
+    color: var(--white);
+}
+
+.nav .social{
+    padding: 1.4rem 0;
+}
+.nav .social i{
+    padding: 0 0.2rem;
+}
+.nav .social i:hover{
+    color: #a1c4cf
+}
+.nav .nav-menu{
+    justify-content: space-between;
+}
+.nav .toggle-collapse{
+    position: absolute;
+    top:0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+.nav .toggle-collapse .toggle-icons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.7rem 0;
+}
+.nav .toggle-collapse .toggle-icons i{
+    font-size: 1.4rem;
+    color: var(--text-gray);
+}
+.nav.expanded {
+    height: 30rem;
+}
+/* Global Styles */
+a{
+    text-decoration: none;
+    color: var(--text-gray);
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ul{
+    list-style-type: none;
+}
+h1{
+    font-family: Lexend, sans-serif;
+    font-size: 2.5rem;
+}
+h2{
+    font-family: Lexend, sans-serif;
+}
+h3{
+    font-family: Abel,sans-serif;
+    font-size: 1.3rem;
+}
+span{
+    font-family: Abel,sans-serif;
+}
+
+/* Filter styles */
+.event-list-container #clubFilter{
+    padding: 4px;
+    background-color:#023047;
+    border-color: transparent;
+    border-radius: 5px;
+    text-align: left;
+    color: white;
+    font-family: poppins;
+    margin-bottom: 20px;
+}
+#monthFilter{
+    padding: 4px 15px;
+    background-color:#023047;
+    border-color: transparent;
+    border-radius: 5px;
+    text-align: left;
+    color: white;
+    font-family: poppins;
+    margin-bottom: 20px;
+}
+#monthFilter:hover, #clubFilter:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #000;
+}
+
+@media (max-width: 940px){
+    .event-list-container .events{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 640px){
+    .event-list-container .events{
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
