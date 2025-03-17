@@ -46,51 +46,147 @@ const events = [
 const eventsHeading = document.querySelector(".event-list-container h2");
 const eventsContainer = document.querySelector(".event-list-container .events");
 const eventSearch = document.querySelector(".event-list-container .event-search");
+const clubFilter = document.getElementById("clubFilter");
+const monthFilter = document.getElementById("monthFilter");
+
+
+const getClubName = (title) => title.split(":")[0].trim();
+
+const getMonth = (date) => {
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let monthIndex = new Date(date).getMonth();
+    return monthNames[monthIndex];
+};
+
+const clubNames = [...new Set(events.map(event => getClubName(event.title)))]; 
+clubNames.forEach(club => {
+    let option = document.createElement("option");
+    option.value = club;
+    option.textContent = club;
+    clubFilter.appendChild(option);
+});
+
+const eventMonths = [...new Set(events.map(event => getMonth(event.date)))]; 
+eventMonths.forEach(month => {
+    let option = document.createElement("option");
+    option.value = month;
+    option.textContent = month;
+    monthFilter.appendChild(option);
+});
+
 let searchTerm = "";
+let selectedClub = "";
+let selectedMonth = "";
 
 eventsHeading.innerHTML = `${events.length} Events`;
 
 const createEventListingCards = () => {
     eventsContainer.innerHTML = "";
-    events.forEach((event,index) => {
-        if(event.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-        let eventCard = document.createElement("div");
-        eventCard.classList.add("event");
+    events.forEach(event => {
+        let clubName = getClubName(event.title);
+        let eventMonth = getMonth(event.date);
 
-        let image = document.createElement("img");
-        image.src = event.image;
+        if (
+            (event.title.toLowerCase().includes(searchTerm.toLowerCase())) &&
+            (selectedClub === "" || clubName === selectedClub) &&
+            (selectedMonth === "" || eventMonth === selectedMonth)
+        ) {
+            let eventCard = document.createElement("div");
+            eventCard.classList.add("event");
 
-        let title = document.createElement("h3");
-        title.innerHTML = event.title;
-        title.classList.add("event-title");
+            let image = document.createElement("img");
+            image.src = event.image;
 
-        let details = document.createElement("p");
-        details.innerHTML = event.details;
-        details.classList.add("details");
+            let title = document.createElement("h3");
+            title.innerHTML = event.title;
+            title.classList.add("event-title");
 
-        let detailsBtn = document.createElement("a");
-        detailsBtn.href = `details-page/details.html?id=${index}`;  
-        detailsBtn.innerHTML = "More Details";
-        detailsBtn.classList.add("details-btn");
+            let details = document.createElement("p");
+            details.innerHTML = event.details;
+            details.classList.add("details");
 
-        let date = document.createElement("span");
-        date.innerHTML = event.date;
-        date.classList.add("date");
+            let detailsBtn = document.createElement("a");
+            detailsBtn.href = `details-page/details.html?id=${events.indexOf(event)}`;
+            detailsBtn.innerHTML = "More Details";
+            detailsBtn.classList.add("details-btn");
 
-        eventCard.appendChild(image);
-        eventCard.appendChild(title);
-        eventCard.appendChild(details);
-        eventCard.appendChild(detailsBtn);
-        eventCard.appendChild(date);
+            let date = document.createElement("span");
+            date.innerHTML = event.date;
+            date.classList.add("date");
 
-        eventsContainer.appendChild(eventCard);
+            eventCard.appendChild(image);
+            eventCard.appendChild(title);
+            eventCard.appendChild(details);
+            eventCard.appendChild(detailsBtn);
+            eventCard.appendChild(date);
+
+            eventsContainer.appendChild(eventCard);
         }
     });
-}
-createEventListingCards();
+};
 
+// Event listeners for search and filter changes
 eventSearch.addEventListener("input", (e) => {
     searchTerm = e.target.value;
-
     createEventListingCards();
 });
+
+clubFilter.addEventListener("change", (e) => {
+    selectedClub = e.target.value;
+    createEventListingCards();
+});
+
+monthFilter.addEventListener("change", (e) => {
+    selectedMonth = e.target.value;
+    createEventListingCards();
+});
+
+// Initial call
+createEventListingCards();
+
+// eventsHeading.innerHTML = `${events.length} Events`;
+
+// const createEventListingCards = () => {
+//     eventsContainer.innerHTML = "";
+//     events.forEach((event,index) => {
+//         if(event.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+//         let eventCard = document.createElement("div");
+//         eventCard.classList.add("event");
+
+//         let image = document.createElement("img");
+//         image.src = event.image;
+
+//         let title = document.createElement("h3");
+//         title.innerHTML = event.title;
+//         title.classList.add("event-title");
+
+//         let details = document.createElement("p");
+//         details.innerHTML = event.details;
+//         details.classList.add("details");
+
+//         let detailsBtn = document.createElement("a");
+//         detailsBtn.href = `details-page/details.html?id=${index}`;  
+//         detailsBtn.innerHTML = "More Details";
+//         detailsBtn.classList.add("details-btn");
+
+//         let date = document.createElement("span");
+//         date.innerHTML = event.date;
+//         date.classList.add("date");
+
+//         eventCard.appendChild(image);
+//         eventCard.appendChild(title);
+//         eventCard.appendChild(details);
+//         eventCard.appendChild(detailsBtn);
+//         eventCard.appendChild(date);
+
+//         eventsContainer.appendChild(eventCard);
+//         }
+//     });
+// }
+// createEventListingCards();
+
+// eventSearch.addEventListener("input", (e) => {
+//     searchTerm = e.target.value;
+
+//     createEventListingCards();
+// });

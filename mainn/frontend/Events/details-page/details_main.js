@@ -6,7 +6,7 @@ const events = [
         details: "Begin your day with Rangmanch, where ethnic styles and captivating performances take center stage. As the evening unfolds, experience Saanjh - an epic night of music, dance and bonding under the stars.",
         date: "29 Sept 2025",
         venue: "Silveria",
-        link: "#",
+        link: "eventRegister-page/eventRegister.html",
     },
     {
         title: "E-Cell: Multiverse of Mavens",
@@ -14,7 +14,7 @@ const events = [
         details: "E-Summit is the annual flagship event of E-Cell, SGSITS. It is a confluence of industry veterans, business leaders, entrepreneurs, visionary students, and anyone who has a passion for entrepreneurship.",
         date: "15 Oct 2025",
         venue: "LT-201",
-        link: "#",
+        link: "eventRegister-page/eventRegister.html",
     },
     {
         title: "GS Production House: Eclipse",
@@ -22,7 +22,7 @@ const events = [
         details: "Eclipse is the annual cultural fest of GS Production House. It is a celebration of art, music, dance, and drama. It is a platform for students to showcase their talent and creativity.",
         date: "25 Nov 2025",
         venue: "Silveria",
-        link: "#",
+        link: "eventRegister-page/eventRegister.html",
     },
     {
         title: "GS Production House: Media Summit",
@@ -30,7 +30,7 @@ const events = [
         details: "Media Summit is the annual event of GS Production House. It is a platform for students to interact with media professionals, learn about the latest trends in media, and explore career opportunities in the media industry.",
         date: "10 Dec 2025",
         venue: "LT-201",
-        link: "#",
+        link: "eventRegister-page/eventRegister.html",
     },
     {
         title: "Computer Club: Tales and Trails",
@@ -38,7 +38,7 @@ const events = [
         details: "Tales and Trails is the annual technical fest of Computer Club. It is a platform for students to showcase their technical skills, participate in coding competitions, and learn about the latest trends in technology.",
         date: "20 Jan 2026",
         venue: "Silveria",
-        link: "#",
+        link: "eventRegister-page/eventRegister.html",
     },
     {
         title: "Pratibimb: Graffathon 2025",
@@ -46,7 +46,7 @@ const events = [
         details: "Graffathon is the annual graffiti competition of Pratibimb. It is a platform for students to showcase their creativity, express their thoughts through art, and compete with other artists.",
         date: "5 Feb 2026",
         venue: "LT-201",
-        link: "#",
+        link: "eventRegister-page/eventRegister.html",
     }
 ];
 
