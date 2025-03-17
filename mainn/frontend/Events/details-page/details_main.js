@@ -1,9 +1,11 @@
+
 const events = [
     {
         title: "Alumni Association: Virsa Vista",
         image: "/mainn/frontend/Event-imgs/asc.jpeg",
         details: "Begin your day with Rangmanch, where ethnic styles and captivating performances take center stage. As the evening unfolds, experience Saanjh - an epic night of music, dance and bonding under the stars.",
         date: "29 Sept 2025",
+        venue: "Silveria",
         link: "#",
     },
     {
@@ -11,6 +13,7 @@ const events = [
         image: "/mainn/frontend/Event-imgs/ecell.jpeg",
         details: "E-Summit is the annual flagship event of E-Cell, SGSITS. It is a confluence of industry veterans, business leaders, entrepreneurs, visionary students, and anyone who has a passion for entrepreneurship.",
         date: "15 Oct 2025",
+        venue: "LT-201",
         link: "#",
     },
     {
@@ -18,6 +21,7 @@ const events = [
         image: "/mainn/frontend/Event-imgs/gsph.jpeg",
         details: "Eclipse is the annual cultural fest of GS Production House. It is a celebration of art, music, dance, and drama. It is a platform for students to showcase their talent and creativity.",
         date: "25 Nov 2025",
+        venue: "Silveria",
         link: "#",
     },
     {
@@ -25,6 +29,7 @@ const events = [
         image: "/mainn/frontend/Event-imgs/gsph2.jpeg",
         details: "Media Summit is the annual event of GS Production House. It is a platform for students to interact with media professionals, learn about the latest trends in media, and explore career opportunities in the media industry.",
         date: "10 Dec 2025",
+        venue: "LT-201",
         link: "#",
     },
     {
@@ -32,6 +37,7 @@ const events = [
         image: "/mainn/frontend/Event-imgs/tales n trails cc.jpeg",
         details: "Tales and Trails is the annual technical fest of Computer Club. It is a platform for students to showcase their technical skills, participate in coding competitions, and learn about the latest trends in technology.",
         date: "20 Jan 2026",
+        venue: "Silveria",
         link: "#",
     },
     {
@@ -39,58 +45,27 @@ const events = [
         image: "/mainn/frontend/Event-imgs/Graffathon.jpeg",
         details: "Graffathon is the annual graffiti competition of Pratibimb. It is a platform for students to showcase their creativity, express their thoughts through art, and compete with other artists.",
         date: "5 Feb 2026",
+        venue: "LT-201",
         link: "#",
     }
-]
+];
 
-const eventsHeading = document.querySelector(".event-list-container h2");
-const eventsContainer = document.querySelector(".event-list-container .events");
-const eventSearch = document.querySelector(".event-list-container .event-search");
-let searchTerm = "";
-
-eventsHeading.innerHTML = `${events.length} Events`;
-
-const createEventListingCards = () => {
-    eventsContainer.innerHTML = "";
-    events.forEach((event,index) => {
-        if(event.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-        let eventCard = document.createElement("div");
-        eventCard.classList.add("event");
-
-        let image = document.createElement("img");
-        image.src = event.image;
-
-        let title = document.createElement("h3");
-        title.innerHTML = event.title;
-        title.classList.add("event-title");
-
-        let details = document.createElement("p");
-        details.innerHTML = event.details;
-        details.classList.add("details");
-
-        let detailsBtn = document.createElement("a");
-        detailsBtn.href = `details-page/details.html?id=${index}`;  
-        detailsBtn.innerHTML = "More Details";
-        detailsBtn.classList.add("details-btn");
-
-        let date = document.createElement("span");
-        date.innerHTML = event.date;
-        date.classList.add("date");
-
-        eventCard.appendChild(image);
-        eventCard.appendChild(title);
-        eventCard.appendChild(details);
-        eventCard.appendChild(detailsBtn);
-        eventCard.appendChild(date);
-
-        eventsContainer.appendChild(eventCard);
-        }
-    });
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
 }
-createEventListingCards();
 
-eventSearch.addEventListener("input", (e) => {
-    searchTerm = e.target.value;
+const eventId = getQueryParam("id");
 
-    createEventListingCards();
-});
+if (eventId !== null && events[eventId]) {
+    const event = events[eventId];
+
+    document.getElementById("event-title").innerText = event.title;
+    document.getElementById("event-image").src = event.image;
+    document.getElementById("event-description").innerText = event.details;
+    document.getElementById("event-date").innerText = event.date;
+    document.getElementById("event-venue").innerText = event.venue;
+    document.getElementById("register-link").href = event.link;
+} else {
+    document.body.innerHTML = "<h1>Event Not Found</h1>";
+}
