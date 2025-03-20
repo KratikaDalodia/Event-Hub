@@ -28,13 +28,15 @@ if (eventId) {
             const eventDoc = await getDoc(doc(db, "events", eventId));
 
             if (eventDoc.exists()) {
-                const event = eventDoc.data();
+                const event = { id: eventDoc.id, ...eventDoc.data() };
 
                 document.getElementById("event-title").textContent = event.title;
                 document.getElementById("event-date").textContent = event.date;
                 document.getElementById("event-description").textContent = event.details;
                 document.getElementById("event-image").src = event.image.replace("uc?export=view", "thumbnail") + "&sz=w1000";
                 document.getElementById("event-venue").textContent = event.venue;
+                console.log("Event ID:", event.id);
+                document.getElementById("register-link").href = `/mainn/frontend/Events/details-page/eventRegister-page/eventRegister.html?id=${event.id}`;
             } else {
                 document.getElementById("event-details").innerHTML = "<p>Event not found!</p>";
             }
