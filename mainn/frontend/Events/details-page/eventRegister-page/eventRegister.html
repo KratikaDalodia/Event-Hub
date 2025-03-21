@@ -23,16 +23,16 @@
             <div>
                 <ul class="nav-items">
                     <li class="nav-links">
-                        <a href="/index.html">Home</a>
+                        <a href="/mainn/frontend/index.html">Home</a>
                     </li>
                     <li class="nav-links">
-                        <a href="/Events/events.html">Events</a>
+                        <a href="/mainn/frontend/Events/events.html">Events</a>
                     </li>
                     <li class="nav-links">
                         <a href="#">Contact</a>
                     </li>
                     <li class="nav-links">
-                        <a href="#">Profile</a>
+                        <a href="/mainn/frontend/ProfiePagenew/profile.html">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
         </div>
     </nav>
     <div class="form-container">
-        <div id="event-registration-form">
+        <form id="event-registration-form">
             <h1>Register for the Event</h1>
             <input type="text" id="name" name="name" placeholder="Full Name" required>
 
@@ -75,10 +75,10 @@
             <input type="file" id="payment-proof" name="payment-proof" placeholder="Payment Confirmation" accept="image/*">
 
             <button type="submit">Register</button>
-        </div>
+        </form>
     </div>
 
 
-    <script src="eventRegister_main.js"></script>
+    <script type="module" src="eventRegister_main.js"></script>
 </body>
 </html>
