@@ -18,6 +18,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // Initialize Firebase Auth
 
+
+// Password visibility toggle
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function() {
+    // Toggle the password field type
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    
+    // Toggle the eye icon
+    this.classList.toggle('bx-hide');
+    this.classList.toggle('bx-show');
+});
+
+
 // Handle Login Form Submission
 document.getElementById("submit").addEventListener("click", (e) => {
     e.preventDefault(); // Prevent form from refreshing
