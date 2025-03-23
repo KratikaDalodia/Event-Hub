@@ -18,6 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // Initialize Firebase Auth
 
+
 // Password visibility toggle
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('#password');
@@ -45,7 +46,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
             alert("Login Successful!");
             console.log(userCredential.user);
             // Redirect to home
-            window.location.href = "frontend/index.html"; 
+            window.location.href = "frontend/organiser/org_home.html"; 
         })
         .catch((error) => {
             alert(error.message);
