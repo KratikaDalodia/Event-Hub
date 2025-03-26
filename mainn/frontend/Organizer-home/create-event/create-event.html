@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="create-event_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Josefin+Sans:wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="classbar">
+        <a href="#" class="logo">Event Hub</a>
+        <ul>
+            <li class="active"><a href="/mainn/frontend/Organizer-home/organizer-home.html" >Home</a></li>
+            <li><a href="/mainn/org_login.html">Sign Out</a></li>
+            <li><a href="#">About Us</a> us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Create An Event</h1>
+        <form id="eventForm">
+            <label for="eventName">Event Name</label>
+            <input type="text" id="eventName" placeholder="Enter event name" required>
+
+            <label for="eventDate">Event Date</label>
+            <input type="date" id="eventDate" required>
+
+            <label for="eventLocation">Location</label>
+            <input type="text" id="eventLocation" placeholder="Enter event location" required>
+
+            <label for="eventDescription">Description</label>
+            <textarea id="eventDescription" placeholder="Write about the event" required></textarea>
+
+            <label for="eventImage">Event Image</label>
+            <input type="text" id="eventImage" placeholder="Enter the drive link of your event poster" required>
+
+
+            <button type="submit">Create Event</button>
+        </form>
+    </div>
+    <script type="module" src="create-event_main.js"></script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

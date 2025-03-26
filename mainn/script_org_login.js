@@ -46,7 +46,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
             alert("Login Successful!");
             console.log(userCredential.user);
             // Redirect to home
-            window.location.href = "frontend/organiser/org_home.html"; 
+            window.location.href = "/mainn/frontend/Organizer-home/organizer-home.html"; 
         })
         .catch((error) => {
             alert(error.message);
