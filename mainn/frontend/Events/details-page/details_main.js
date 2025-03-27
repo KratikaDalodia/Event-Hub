@@ -33,7 +33,20 @@ if (eventId) {
                 document.getElementById("event-title").textContent = event.title;
                 document.getElementById("event-date").textContent = event.date;
                 document.getElementById("event-description").textContent = event.details;
-                document.getElementById("event-image").src = event.image.replace("uc?export=view", "thumbnail") + "&sz=w1000";
+                document.getElementById("event-image").src = event.image 
+                    ? formatImageURL(event.image) 
+                    : "default-image.jpg";  // Replace with an actual placeholder image URL
+
+                function formatImageURL(url) {
+                    if (url.includes("drive.google.com")) {
+                        // Handle Google Drive direct link
+                        return url.replace("uc?export=view", "thumbnail") + "&sz=w1000";
+                    } else {
+                        // Handle local or other server links
+                        return encodeURI(url);  // Encode spaces and special characters
+                    }
+                }
+
                 document.getElementById("event-venue").textContent = event.venue;
                 console.log("Event ID:", event.id);
                 document.getElementById("register-link").href = `/mainn/frontend/Events/details-page/eventRegister-page/eventRegister.html?id=${event.id}`;

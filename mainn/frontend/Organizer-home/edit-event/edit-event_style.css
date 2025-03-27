@@ -1,0 +1,169 @@
+/* Body styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+}
+
+
+a{
+    color:#fff ;
+    text-decoration: none;
+}
+.classbar{
+    position: fixed;
+    left: 0;
+    top:0;
+    width:100%;
+    padding: 25px 9%;
+    /* background: slateblue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.5s;
+}
+@keyframes show-content{
+     
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.classbar .logo{
+  font-size: 30px;
+  font-weight: 700;
+}
+.classbar ul{
+    display:flex;
+}
+ .classbar ul li{
+     list-style: none;
+     margin-left: 35px;
+ }
+ .classbar ul li a{
+    font-size: 20px;
+    font-weight: 500;
+    transition: .5s;
+ }
+ .classbar ul li:hover a{
+    color: #7cf03d;
+ }
+.classbar ul li .active a{
+    color: #7cf03d; 
+} 
+body {
+    
+    font-family: Arial, sans-serif;
+    background: url('purple abstract background with luxury golden elements vector illustration.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Container styling */
+.container {
+    height: 120vh;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgb(255, 255, 255); 
+    width: 40%; 
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.5s;
+}
+
+/* Heading styling */
+h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+label {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+    margin-top: 12px;
+    color: white;
+}
+
+/* Input and textarea styling */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* Textarea-specific styling */
+textarea {
+    height: 80px;
+    resize: none; /* Prevent resizing */
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 400ms ease;
+}
+
+button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.02);
+}
+
+#imagePreview {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+input:focus, textarea:focus {
+    border-color: #4CAF50;
+    outline: none; 
+}
+
+input::placeholder, textarea::placeholder {
+    color:rgb(0, 0, 0);
+}
+
+input, textarea {
+    border-color: #ccc;
+}
+
+.container > * {
+    margin-bottom: 12px;
+}
+input[type="date"], input[type="time"] {
+    color: rgb(0, 0, 0);
+    background-color: white;
+}

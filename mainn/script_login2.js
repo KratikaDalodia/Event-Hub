@@ -1,17 +1,28 @@
-// Import Firebase SDK
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js"; 
+// // Import Firebase SDK
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 
-// Your Firebase configuration
+// // Your Firebase configuration
+// const firebaseConfig = {
+//     apiKey: "AIzaSyAVxK1_lGtAaVH2WAEf7It9TLJKvV16EnU",
+//     authDomain: "event-hub-68c11.firebaseapp.com",
+//     databaseURL: "https://event-hub-68c11-default-rtdb.asia-southeast1.firebasedatabase.app",
+//     projectId: "event-hub-68c11",
+//     storageBucket: "event-hub-68c11.appspot.com",
+//     messagingSenderId: "899463910584",
+//     appId: "1:899463910584:web:a80839e92cfd589e67904d",
+//     measurementId: "G-3PW2XTLSHY"
+// };
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"; 
+
 const firebaseConfig = {
-    apiKey: "AIzaSyAVxK1_lGtAaVH2WAEf7It9TLJKvV16EnU",
-    authDomain: "event-hub-68c11.firebaseapp.com",
-    databaseURL: "https://event-hub-68c11-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "event-hub-68c11",
-    storageBucket: "event-hub-68c11.appspot.com",
-    messagingSenderId: "899463910584",
-    appId: "1:899463910584:web:a80839e92cfd589e67904d",
-    measurementId: "G-3PW2XTLSHY"
+    apiKey: "AIzaSyANWJFpmZK0AAK6j3-wRjKD_7ShHWtON4k",
+    authDomain: "event-hub-e7f6c.firebaseapp.com",
+    projectId: "event-hub-e7f6c",
+    storageBucket: "event-hub-e7f6c.appspot.com",
+    messagingSenderId: "380985028611",
+    appId: "1:380985028611:web:74718b5a32a841c4ec5e36",
+    measurementId: "G-XCKT9FBD4F"
 };
 
 // Initialize Firebase

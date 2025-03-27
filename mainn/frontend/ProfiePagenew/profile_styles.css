@@ -70,8 +70,8 @@ a{
     gap: 50px ;
 }
 .home-info h1{
- font-size: 40px;
- margin-left: 130px;
+ font-size: 60px;
+ margin-left: 95px;
  color: transparent;
  -webkit-text-stroke: .7px #7cf038;
  /* animation: display-text 16s linear infinite; */
@@ -85,7 +85,7 @@ a{
 .home-info h2{ 
     font-size: 25px;
     margin-top: -10px;
-    margin-left: 130px;
+    margin-left: 95px;
 }
 .home-img{
     margin-left: 250px;
@@ -116,6 +116,11 @@ a{
 .home-img .img-box::after{
     animation-delay: -5s;
 }
+#event-history{
+    color: white;
+    text-align: center;
+}
+
 @keyframes rotate-border{
     100%{
         transform: rotate(360deg);
