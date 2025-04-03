@@ -21,6 +21,32 @@ const registrationsRef = collection(db, "registrations");
 document.getElementById("event-registration-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const emailInput = document.getElementById("email").value.trim();
+    const validDomains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "sgsits.ac.in"]; // Add more if needed
+
+    // Regular Expression for basic email format validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    if (!emailRegex.test(emailInput)) {
+        alert("Invalid email format. Please enter a valid email.");
+        return;
+    }
+
+    // Extract username and domain from email
+    const [username, emailDomain] = emailInput.split("@");
+
+    // Check if domain is in the valid domains list
+    if (!validDomains.includes(emailDomain)) {
+        alert("Invalid email domain. Please use a valid email provider.");
+        return;
+    }
+
+    // Check if username has more than 8 characters and contains at least one alphabet
+    if (username.length > 8 && !/[a-zA-Z]/.test(username)) {
+        alert("Username must contain at least one alphabet if it has more than 8 characters.");
+        return;
+    }
+
     const paymentFile = document.getElementById("payment-proof").files[0];
     if (!paymentFile) {
         alert("Please upload payment proof");
@@ -31,9 +57,8 @@ document.getElementById("event-registration-form").addEventListener("submit", as
         if (user) {
             try {
                 // 1. Upload payment proof to Flask server
-                // Upload payment proof
                 const paymentFormData = new FormData();
-                paymentFormData.append("payment", paymentFile); // Note the field name is "payment"
+                paymentFormData.append("payment", paymentFile);
 
                 const uploadResponse = await fetch('http://127.0.0.1:5000/upload-payment', {
                     method: 'POST',
@@ -41,7 +66,6 @@ document.getElementById("event-registration-form").addEventListener("submit", as
                 });
 
                 const uploadResult = await uploadResponse.json();
-                const paymentProofUrl = uploadResult.file_url;
                 
                 if (!uploadResult.file_url) {
                     throw new Error("Payment proof upload failed");
@@ -53,7 +77,7 @@ document.getElementById("event-registration-form").addEventListener("submit", as
                     eventId: urlParams.get("id"),
                     name: document.getElementById("name").value,
                     phone: document.getElementById("phone").value,
-                    email: document.getElementById("email").value,
+                    email: emailInput,
                     branch: document.getElementById("branch").value,
                     year: document.getElementById("year").value,
                     paymentScreenshot: uploadResult.file_url,
